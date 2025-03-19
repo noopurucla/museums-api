@@ -1,10 +1,10 @@
 from flask import Flask, jsonify
-from flask_cors import CORS  # Import CORS
+from flask_cors import CORS  # Import CORS to allow cross-origin requests
 import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-CORS(app, resources={r"/exhibitions": {"origins": "*"}})  # Explicitly enable CORS for exhibitions route
+CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins
 
 # Scrape Hammer Museum
 def scrape_hammer():
