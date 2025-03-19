@@ -46,6 +46,10 @@ def scrape_getty():
 
     return exhibitions
 
+@app.route('/')
+def home():
+    return "LA Museums API is running!"
+
 @app.route('/exhibitions', methods=['GET'])
 def get_exhibitions():
     data = scrape_hammer() + scrape_lacma() + scrape_getty()
